@@ -340,6 +340,10 @@
     <mime-type>mymime/type</mime-type>
   </mime-mapping>
   -->
+  <mime-mapping>
+    <extension>csv</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
 
   <!-- ==================================================================== -->
   <welcome-file-list>

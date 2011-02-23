@@ -30,7 +30,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jangaroo_version>0.8.1</jangaroo_version>
+    <jangaroo_version>0.8.2-SNAPSHOT</jangaroo_version>
     <jangaroo_libs_version>0.8.3-SNAPSHOT</jangaroo_libs_version>
     <jetty_version>7.2.0.v20101020</jetty_version>
   </properties>
@@ -51,6 +51,14 @@
       <resource>
         <directory>music</directory>
         <targetPath>joo/music</targetPath>
+      </resource>
+      <resource>
+        <directory>data</directory>
+        <targetPath>joo/data</targetPath>
+      </resource>
+      <resource>
+        <directory>levels</directory>
+        <targetPath>joo/levels</targetPath>
       </resource>
       <resource>
         <directory>webapp</directory>
