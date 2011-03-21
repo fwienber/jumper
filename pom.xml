@@ -39,7 +39,7 @@
     <repository>
       <id>jangaroo</id>
       <name>Jangaroo repository</name>
-      <url>scp://repo.jangaroo.net/home/jangaroo/maven2/repo</url>
+      <url>http://repo.jangaroo.net/maven2</url>
     </repository>
   </repositories>
 
