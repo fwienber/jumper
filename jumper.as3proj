@@ -51,7 +51,7 @@
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="%M2_REPO%\net\jangaroo\flash\flixel\flixel\0.8.5.1\flixel-0.8.5.1.jar" />
   </externalLibraryPaths>
   <!-- Runtime Shared Libraries -->
   <rslPaths>
