@@ -30,32 +30,31 @@ Otherwise, download and unzip the "Jumper" project files (if you have `git` inst
 2. choose `Download .zip`, and
 3. unzip to a directory of your choice
 
+**Starting the Web Server**
+
+For technical reasons, most Jangaroo Flash applications, like most Web applications in general, cannot be run from the local file system (security issues). Fortunately, Maven also allows starting a local Web server serving your Web app in three simple steps:
+
+1. open a command prompt
+2. `cd` into your project root directory
+3. enter `mvn jetty:run`
+
+A Jetty Web server is started, serving your Web application at `http://localhost:8080/`.
+Now, you can open this URL in your favorite Web browser and try the game.
+
+**Development**
+
 You can use several IDEs to work with AS3 source code. Currently, the best IDE for Jangaroo development is [IntelliJ IDEA 10 Ultimate](http://www.jetbrains.com/idea/download/index.html), but since you probably prefer a free IDE, the following "getting started" refers to [FlashDevelop](http://www.flashdevelop.org). FlashDevelop is Windows-only (I think there is an experimental Mac version).
 
-So please start by installing FlashDevelop.
+So please start by downloading and installing the latest version of [FlashDevelop](http://www.flashdevelop.org).
 
 Then, double-click the provided file `jumper.as3proj` (located directly inside the unpacked zip), which should launch FlashDevelop, opening the project.
 
 Now you can build the project using the `Build Project` toolbar button. Maven is invoked and compiles and builds your Web application.
 Then, your default browser opens your Jangaroo Jumper game!
-Now you can edit source code, using FlashDevelop's nice code assist features, click `Build Project` again, and watch the result in the browser window. If changes do not appear, try clearing the browser cache.
+Now you can edit source code, using FlashDevelop's nice code assist features, click `Build Project` again, and watch the result in the browser window.
 
-For debugging, please have a look at the [Jangaroo debugging tutorial](http://www.jangaroo.net/tutorial/debugging).
+Note that for every turn-around, a new browser window is opened, so be sure to close the old one. If you do not want FlashDevelop to open a new browser window, click on the `Project Properties` button, then on the `Build` tab, and clear the `Post-Build Command Line`. Then, the most convenient round-trip is to rebuild the project, `Alt-Tab` to the existing browser window and hit `F5`.
 
-**Optional Setup**
+If code changes do not appear in the browser, try clearing the browser cache.
 
-Loading the application from the local filesystem has some disadvantages. IE keeps on asking whether you want local scripts to execute. Debugging is not as nice, as Firebug's Network tab stays empty. Ajax requests (which jooflash uses for [Embed(...)] of text files) do not work.
-
-To improve the situation, Maven allows starting a local Web server serving your Web app in three simple steps:
-
-1. In FlashDevelop, open the file `pom.xml` by double-clicking it in the `Project` window.
-2. By clicking the `Command Prompt` button, a command window opens. The current path should be your project root directory, otherwise `cd` into it.
-3. Enter `mvn jetty:run`. A Jetty Web server is started, serving your Web application at `http://localhost:8080/`.
-
-To let FlashDevelop open this page in firefox after build, change `Project Properties | Build | Post-Build Command Line` to
-
-`cmd /C "start http://localhost:8080"`
-
-or, to invoke the debuggable version, use
-
-`cmd /C "start http://localhost:8080/jooflash.html#joo.debug"`
+If your browser window stays empty, please check for JavaScript errors and have a look at the [Jangaroo debugging tutorial](http://www.jangaroo.net/tutorial/debugging).
