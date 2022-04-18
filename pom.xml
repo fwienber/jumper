@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jumper</artifactId>
+  <groupId>net.jangaroo.flash.flixel</groupId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <packaging>swc</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jangaroo_version>4.1.14</jangaroo_version>
+    <jooflash_version>4.1.5</jooflash_version>
+    <flixel_version>2.36-beta-1</flixel_version>
+  </properties>
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+
+    <resources>
+      <resource>
+        <directory>.</directory>
+        <includes>
+          <include>**/*.png</include>
+          <include>**/*.mp3</include>
+          <include>**/*.csv</include>
+          <include>**/*.txt</include>
+          <include>**/*.ttf</include>
+        </includes>
+        <targetPath>../packages/${project.groupId}__${project.artifactId}/src</targetPath>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>net.jangaroo</groupId>
+        <artifactId>jangaroo-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <version>${jangaroo_version}</version>
+        <configuration>
+          <migrateToTypeScript>true</migrateToTypeScript>
+          <suppressCommentedActionScriptCode>true</suppressCommentedActionScriptCode>
+          <extNamespace>com.chipacabra.Jumper</extNamespace>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.jangaroo</groupId>
+      <artifactId>jooflash</artifactId>
+      <version>${jooflash_version}</version>
+      <type>swc</type>
+    </dependency>
+
+    <dependency>
+      <groupId>net.jangaroo.flash.flixel</groupId>
+      <artifactId>flixel</artifactId>
+      <version>${flixel_version}</version>
+      <type>swc</type>
+    </dependency>
+  </dependencies>
+
+</project>
